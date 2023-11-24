@@ -15,7 +15,8 @@ public class Inventarios_2 {
      */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        Proveedores pv=new Proveedores();
+        Pedidos pd=new Pedidos();
         int opcion;
         do {
             menu();
@@ -25,12 +26,10 @@ public class Inventarios_2 {
             switch (opcion) {
                 case 1:
                     System.out.println("----- Proveedores -----");
-                    Proveedores();
-                    break;
+                    pv.Proveedores();break;
                 case 2:
                     System.out.println("----- Pedidos -----");
-                    Pedidos();
-                    break;
+                    pd.Pedidos();break;
                 case 3:
                     System.out.println("----- Productos -----");
                     Productos();
@@ -68,37 +67,6 @@ public class Inventarios_2 {
         System.out.println("6. Salir");
     }
 
-    private static void Proveedores() {
-        int opc=1;
-        Scanner scanner = new Scanner(System.in);
-        do 
-        {
-            System.out.println("/// Escogio Proveedores ///");
-            System.out.print("Ingrese el nombre del proveedor: ");
-            String prov_nombre = scanner.nextLine();
-            System.out.print("Ingrese el apellido del proveedor: ");
-            String prov_apell = scanner.nextLine();
-            System.out.print("Ingrese el DPI del proveedor: ");
-            String dpi = scanner.nextLine();
-            System.out.println("\n--- Datos del Proveedor ---");
-            System.out.println("Nombre: " + prov_nombre);
-            System.out.println("Apellido: " + prov_apell);
-            System.out.println("DPI: " + dpi);
-            System.out.println("Deseas agregar otro proveedor? (1)Si/(2)No");
-            opc=scanner.nextInt();
-            scanner.nextLine();
-        }while(opc==1);
-        if (opc==2) {
-            System.out.println("<<< Regresando al menu principal");
-            return;}
-    }
-
-    private static void Pedidos(){
-       
-        System.out.println("/// Escogio Pedidos ///");
-        opcion();
-    }
-
     private static void Productos() {
         
         Scanner scanner = new Scanner(System.in);
@@ -124,7 +92,7 @@ public class Inventarios_2 {
         System.out.println("Cantidad de artículos: " + cantidad_art);
         System.out.println("Tipo de artículo: " + tipo_art);
         System.out.println("Talla: " + talla);
-        opcion();
+        
     }
 
     private static void Ventas() {
@@ -132,7 +100,7 @@ public class Inventarios_2 {
         Scanner scanner = new Scanner(System.in);
         
         System.out.println("/// Escogio Ventas ///");
-        opcion();
+        
     }
 
     private static void Devoluciones() {
@@ -141,26 +109,7 @@ public class Inventarios_2 {
       
         System.out.println("/// Escogio Devoluciones ///");
         
-        opcion();
-    }
-
-    private static void opcion() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("¿Desea realizar otra acción? Sí/No: ");
-        String opc = scanner.next().toLowerCase();
         
-
-        while (!opc.equals("si") && !opc.equals("no")) {
-            System.out.println("Invalido, porfavor intente nuevamente.");
-            System.out.print("¿Quiere hacer otra accion? (Sí/No): ");
-            opc = scanner.next().toLowerCase();
-        }
-
-        if (opc.equals("no")) {
-            System.out.println("<<< Regresando al menu principal");
-            
-            return;
-        }
     }
-    
+
 }
