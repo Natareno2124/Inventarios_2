@@ -17,6 +17,9 @@ public class Inventarios_2 {
         Scanner scanner = new Scanner(System.in);
         Proveedores pv=new Proveedores();
         Pedidos pd=new Pedidos();
+        Productos prod = new Productos();
+        Ventas ventas = new Ventas();
+        Devoluciones dev = new Devoluciones();
         int opcion;
         do {
             menu();
@@ -32,15 +35,15 @@ public class Inventarios_2 {
                     pd.Pedidos();break;
                 case 3:
                     System.out.println("----- Productos -----");
-                    Productos();
+                    prod.Productos();
                     break;
                 case 4:
                     System.out.println("----- Ventas -----");
-                    Ventas();
+                    ventas.Ventas();
                     break;
                 case 5:
                     System.out.println("----- Devoluciones -----");
-                    Devoluciones();
+                    dev.Devoluciones();
                     break;
                 case 6:
                     System.out.println("Pase un lindo dia!");
@@ -66,50 +69,4 @@ public class Inventarios_2 {
         System.out.println("5. Devoluciones");
         System.out.println("6. Salir");
     }
-
-    private static void Productos() {
-        
-        Scanner scanner = new Scanner(System.in);
-      
-        System.out.println("/// Escogio Productos ///");
-        
-        System.out.print("Ingrese el código del artículo: ");
-        int cod_art = scanner.nextInt();
-        scanner.nextLine();  
-
-        System.out.print("Ingrese la cantidad de artículos: ");
-        int cantidad_art = scanner.nextInt();
-        scanner.nextLine();  
-
-        System.out.print("Ingrese el tipo de artículo: ");
-        String tipo_art = scanner.nextLine();
-        
-        System.out.print("Ingrese la talla: ");
-        int talla = scanner.nextInt();
-
-        System.out.println("\n--- Datos Ingresados ---");
-        System.out.println("Código del artículo: " + cod_art);
-        System.out.println("Cantidad de artículos: " + cantidad_art);
-        System.out.println("Tipo de artículo: " + tipo_art);
-        System.out.println("Talla: " + talla);
-        
-    }
-
-    private static void Ventas() {
-        
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.println("/// Escogio Ventas ///");
-        
-    }
-
-    private static void Devoluciones() {
-        
-        Scanner scanner = new Scanner(System.in);
-      
-        System.out.println("/// Escogio Devoluciones ///");
-        
-        
-    }
-
 }
